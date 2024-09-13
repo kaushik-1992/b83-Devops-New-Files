@@ -1,0 +1,13 @@
+- hosts: ansiblenode
+
+  tasks: 
+    - name: create the custom docker image
+      command: docker build -t image1:v1 .
+      args:
+        chdir: /opt/docker-workspace
+
+    - name: Tagging the custom docker image
+      command: docker tag image1:v1 kaushikg1992/image1:latest
+
+    - name: Push the custom docker image to hub
+      command: docker push kaushikg1992/image1:latest

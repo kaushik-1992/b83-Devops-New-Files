@@ -1,0 +1,12 @@
+- hosts: dockernode
+
+  tasks:
+  
+  - name: Pull custom image from hub
+    command: docker pull kaushikg1992/image2:latest
+    args:
+     chdir: /opt/docker-workspace
+  
+  - name: Run container
+    command: docker run -d --name myapp -p 8081:8080 kaushikg1992/image2:latest
+    

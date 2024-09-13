@@ -1,18 +1,0 @@
-Êþº¾   3 "
-       java/lang/Object <init> ()V	  	  
- 
-  java/lang/System out Ljava/io/PrintStream;  Hello World!
-       java/io/PrintStream  println (Ljava/lang/String;)V   com/training/app/App Code LineNumberTable LocalVariableTable this Lcom/training/app/App; main ([Ljava/lang/String;)V args [Ljava/lang/String; 
-SourceFile App.java !               /     *· ±                         	       7     	²  
-¶ ±       
-    
-          	           !
-
-
-
-B83-tomcat-node
-
-http://54.147.157.195:8080/webapp/
-
-
-

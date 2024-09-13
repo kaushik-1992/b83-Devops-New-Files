@@ -1,0 +1,13 @@
+- hosts: ansiblenode
+
+  tasks:
+    - name: Build docker image
+      command: docker build -t image3:v3 .
+      args:
+       chdir: /opt/docker-workspace  
+
+    - name: Tag the Docker custom image
+      command: docker tag image3:v3 kaushikg1992/image3:latest
+
+    - name: push the Docker custom image
+      command: docker push kaushikg1992/image3:latest

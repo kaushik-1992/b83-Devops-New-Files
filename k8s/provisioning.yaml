@@ -1,0 +1,9 @@
+- hosts: kubernetes
+  user: ansadmin
+
+  tasks:
+    - name: create deployment file using pod.yaml
+      command: kubectl apply -f pod.yaml
+
+    - name: create service file using service.yaml
+      command: kubectl apply -f service.yaml 

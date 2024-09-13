@@ -1,0 +1,7 @@
+- hosts: ansiblenode
+
+  tasks:
+    - name: Create the custom docker image
+      command: docker build -t image2:v2 .
+      args:
+        chdir: /opt/docker-workspace

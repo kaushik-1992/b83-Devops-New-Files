@@ -1,0 +1,32 @@
+#This command specifies the base image for the Dockerfile. In this case, it's using the latest version of the #Fedora Linux distribution as the starting point. 
+FROM fedora:latest 
+
+#This command uses yum (the package manager for Fedora) to install the OpenJDK 11 (Java Development Kit) in the #Docker image. 
+RUN yum install java-11-openjdk -y 
+
+#This creates a directory named /opt/tomcat within the Docker image filesystem. This directory will be used to #store the Apache Tomcat installation. 
+RUN mkdir /opt/tomcat 
+
+#This sets the working directory for subsequent commands to /opt/tomcat. This means that all future commands #will be executed relative to this directory. 
+WORKDIR /opt/tomcat 
+
+#This downloads the Apache Tomcat 9.0.80 tarball from the specified URL and adds it to the current working #directory (/opt/tomcat). The dot (.) at the end of the command indicates the current directory. 
+#ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz . 
+ADD  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.87/bin/apache-tomcat-9.0.87.tar.gz . 
+
+#This installs the tar and gzip utilities using yum. These tools are necessary to extract the downloaded #tarball. 
+RUN yum install tar gzip -y 
+
+#This command extracts the contents of the downloaded Tomcat tarball (apache-tomcat-9.0.80.tar.gz) using tar. #The flags -xvzf specify the operation (extract, verbose, gzip, file). 
+RUN tar -xvzf apache-tomcat-9.0.87.tar.gz 
+
+#This moves all the files and directories from apache-tomcat-9.0.80 to /opt/tomcat. This effectively completes #the installation process. 
+RUN mv apache-tomcat-9.0.87/* /opt/tomcat 
+
+#apache-tomcat-9.0.87 
+
+#This instruction informs Docker that the container will listen on port 8080 at runtime. It doesn't actually #publish the port, but serves as a form of documentation for developers. 
+EXPOSE 8080 
+
+#This sets the default command to run when the container starts. It executes the catalina.sh script in #/opt/tomcat/bin with the argument run, which starts the Tomcat server. 
+CMD ["/opt/tomcat/bin/catalina.sh", "run"] 

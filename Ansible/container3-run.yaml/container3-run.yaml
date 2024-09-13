@@ -1,0 +1,22 @@
+- hosts: dockernode
+
+  tasks:
+  - name: stop existing container
+    command: docker stop myapp3
+    ignore_error: yes
+
+  - name: remove stopped container
+    command: docker rm myapp3
+    ignore_error: yes
+
+  - name: remove image
+    command: docker rmi kaushikg1992/image3:latest
+    ignore_error: yes
+
+  - name: pull image from docker hub
+    command: docker pull kaushikg1992/image3:latest
+    args:
+      chdir: /opt/docker-workspace
+
+  - name: run the container
+    command: docker run -d --name myapp3 -p 8082:8080 kaushikg1992/image3:latest
