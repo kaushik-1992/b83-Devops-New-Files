@@ -1,0 +1,2 @@
+Kubernetes is a Automation tool in the AWS Cloud.
+It creates its own pods and containers init automatically even after deleting it.
