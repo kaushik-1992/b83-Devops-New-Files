@@ -1,0 +1,3 @@
+Tomcat is a application server in the AWS.
+Which can store applications in it and can have many containers.
+For Monitoring application we use tomcat tool.
