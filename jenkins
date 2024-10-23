@@ -2,6 +2,8 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 This is used to do Automation of tools.All the nodes ip address and user names ashould be in the jenkins node for integration.
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 This is used to do Automation of tools.
 All the nodes ip address and user names ashould be in the jenkins node for integration.
@@ -11,4 +13,10 @@ This is used to do Automation of tools.All the nodes ip address and user names a
 >>>>>>> Stashed changes
 =======
 This is used to do Automation of tools. All the nodes ip address and user names ashould be in the jenkins node for integration.
+>>>>>>> Stashed changes
+=======
+CI-CD is used when we integrate and deploy the code base.
+>>>>>>> Stashed changes
+=======
+CI-CD is used when we integrate and deploy the code base.
 >>>>>>> Stashed changes
